@@ -6,7 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- YOUR PROJECT SCRIPT -->
+<script>
+fetch("https://api.github.com/users/nf676323-pixel/repos")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector(".projects-grid");
 
+    data.forEach(repo => {
+      const project = document.createElement("div");
+      project.classList.add("project");
+
+      project.innerHTML = `
+        <h3>${repo.name}</h3>
+        <p>${repo.description || "No description available"}</p>
+        <a href="${repo.html_url}" target="_blank">View Code</a>
+      `;
+
+      container.appendChild(project);
+    });
+  });
+</script>
+
+</body>
 <body>
 
 <!-- NAVBAR -->
