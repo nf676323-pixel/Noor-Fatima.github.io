@@ -5,10 +5,7 @@
   <title>Noor Fatima | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -29,13 +26,9 @@
 <header>
   <h1>Noor Fatima</h1>
 
-  <p>
-    Computer Science Student • Frontend Developer • Problem Solver
-  </p>
+  <p>Computer Science Student • Frontend Developer • Problem Solver</p>
 
-  <p>
-    📍 Rawalpindi | 4th Semester — Fatima Jinnah Women University
-  </p>
+  <p>📍 Rawalpindi | 4th Semester — Fatima Jinnah Women University</p>
 
   <div class="skills">
     <span>Java</span>
@@ -47,25 +40,23 @@
   </div>
 </header>
 
-<!-- ABOUT -->
+<!-- ABOUT (IMPROVED) -->
 <section id="about" class="card">
   <h2><i class="fas fa-user"></i> About Me</h2>
 
   <p>
-    I am a passionate Computer Science undergraduate specializing in frontend development, 
-    with a strong foundation in programming and problem solving. I enjoy building clean, 
-    responsive, and user-friendly interfaces using modern web technologies.
+    I am a <b>Computer Science undergraduate</b> with a strong passion for
+    <b>frontend development</b> and software engineering.
   </p>
 
   <p>
-    With hands-on experience in Java, Python, and databases, along with solid concepts 
-    in Data Structures and Digital Logic Design, I focus on writing efficient and 
-    structured code to solve real-world problems.
+    I have practical experience in <b>Java, Python, PL/SQL, and Assembly</b>,
+    along with strong understanding of <b>Data Structures, Algorithms, and Digital Logic Design</b>.
   </p>
 
   <p>
-    I am continuously learning, improving my skills, and working towards becoming 
-    a professional software developer.
+    I enjoy building clean and efficient applications and continuously improving my skills
+    to grow as a <b>professional software developer</b>.
   </p>
 </section>
 
@@ -79,12 +70,10 @@
     <span>C++</span>
     <span>Python</span>
     <span>PL/SQL</span>
-    <span>Data Structures</span>
-    <span>Assembly</span>
     <span>HTML</span>
     <span>CSS</span>
-    <span>Database</span>
-    <span>Networking</span>
+    <span>Data Structures</span>
+    <span>Assembly</span>
     <span>Azure</span>
   </div>
 </section>
@@ -111,38 +100,40 @@
 
   <p>
     <i class="fab fa-github"></i>
-    <a href="https://github.com/nf676323-pixel" target="_blank">GitHub</a>
+    <a href="https://github.com/nf676323-pixel" target="_blank">GitHub Profile</a>
   </p>
 
   <p>
     <i class="fab fa-linkedin"></i>
-    <a href="https://www.linkedin.com/in/noor-fatima-613658388/" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/noor-fatima-613658388/" target="_blank">LinkedIn Profile</a>
   </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 Noor Fatima</p>
 </footer>
 
-<!-- GITHUB SCRIPT -->
+<!-- GITHUB AUTO PROJECTS -->
 <script>
 fetch("https://api.github.com/users/nf676323-pixel/repos")
   .then(res => res.json())
-  .then(data => {
+  .then(repos => {
     const container = document.querySelector(".projects-grid");
 
-    data.forEach(repo => {
-      const project = document.createElement("div");
-      project.classList.add("project");
+    repos.forEach(repo => {
+      const card = document.createElement("div");
+      card.classList.add("project");
 
-      project.innerHTML = `
+      card.innerHTML = `
         <h3>${repo.name}</h3>
-        <p>${repo.description || "No description available"}</p>
-        <a href="${repo.html_url}" target="_blank">View Code</a>
+        <p>${repo.description ? repo.description : "No description available"}</p>
+
+        <a href="${repo.html_url}" target="_blank">
+          🔗 View Code
+        </a>
       `;
 
-      container.appendChild(project);
+      container.appendChild(card);
     });
   });
 </script>
