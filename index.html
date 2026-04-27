@@ -5,7 +5,10 @@
   <title>Noor Fatima | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -26,9 +29,13 @@
 <header>
   <h1>Noor Fatima</h1>
 
-  <p>Computer Science Student • Frontend Developer • Problem Solver</p>
+  <p>
+    Computer Science Student • Frontend Developer • Problem Solver
+  </p>
 
-  <p>📍 Rawalpindi | 4th Semester — Fatima Jinnah Women University</p>
+  <p>
+    📍 Rawalpindi | 4th Semester — Fatima Jinnah Women University
+  </p>
 
   <div class="skills">
     <span>Java</span>
@@ -40,23 +47,20 @@
   </div>
 </header>
 
-<!-- ABOUT (IMPROVED) -->
+<!-- ABOUT -->
 <section id="about" class="card">
   <h2><i class="fas fa-user"></i> About Me</h2>
 
   <p>
-    I am a <b>Computer Science undergraduate</b> with a strong passion for
-    <b>frontend development</b> and software engineering.
+    I am a Computer Science undergraduate with strong interest in frontend development and problem solving.
   </p>
 
   <p>
-    I have practical experience in <b>Java, Python, PL/SQL, and Assembly</b>,
-    along with strong understanding of <b>Data Structures, Algorithms, and Digital Logic Design</b>.
+    I have experience in Java, Python, PL/SQL, Assembly, Data Structures, and Digital Logic Design.
   </p>
 
   <p>
-    I enjoy building clean and efficient applications and continuously improving my skills
-    to grow as a <b>professional software developer</b>.
+    I aim to become a professional software developer by continuously improving my skills.
   </p>
 </section>
 
@@ -100,20 +104,25 @@
 
   <p>
     <i class="fab fa-github"></i>
-    <a href="https://github.com/nf676323-pixel" target="_blank">GitHub Profile</a>
+    <a href="https://github.com/nf676323-pixel" target="_blank">
+      nf676323-pixel
+    </a>
   </p>
 
   <p>
     <i class="fab fa-linkedin"></i>
-    <a href="https://www.linkedin.com/in/noor-fatima-613658388/" target="_blank">LinkedIn Profile</a>
+    <a href="https://www.linkedin.com/in/noor-fatima-613658388/" target="_blank">
+      noor-fatima-613658388
+    </a>
   </p>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Noor Fatima</p>
 </footer>
 
-<!-- GITHUB AUTO PROJECTS -->
+<!-- GITHUB PROJECTS AUTO LOAD -->
 <script>
 fetch("https://api.github.com/users/nf676323-pixel/repos")
   .then(res => res.json())
@@ -127,10 +136,7 @@ fetch("https://api.github.com/users/nf676323-pixel/repos")
       card.innerHTML = `
         <h3>${repo.name}</h3>
         <p>${repo.description ? repo.description : "No description available"}</p>
-
-        <a href="${repo.html_url}" target="_blank">
-          🔗 View Code
-        </a>
+        <a href="${repo.html_url}" target="_blank">View Code</a>
       `;
 
       container.appendChild(card);
