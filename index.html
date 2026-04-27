@@ -1,3 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Noor Fatima | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>Noor Fatima</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header>
+  <h1>Noor Fatima</h1>
+
+  <p>
+    Computer Science Student • Frontend Developer • Problem Solver
+  </p>
+
+  <p>
+    📍 Rawalpindi | Fatima Jinnah Women University
+  </p>
+
+  <div class="skills">
+    <span>Java</span>
+    <span>Python</span>
+    <span>PL/SQL</span>
+    <span>Assembly</span>
+    <span>Azure</span>
+    <span>DSA</span>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="card">
+  <h2><i class="fas fa-user"></i> About Me</h2>
+
+  <p>
+    I am a passionate Computer Science undergraduate specializing in frontend development, 
+    with a strong foundation in programming and problem solving. I enjoy building clean, 
+    responsive, and user-friendly interfaces using modern web technologies.
+  </p>
+
+  <p>
+    With hands-on experience in Java, Python, and databases, along with solid concepts 
+    in Data Structures and Digital Logic Design, I focus on writing efficient and 
+    structured code to solve real-world problems.
+  </p>
+
+  <p>
+    Currently, I am focused on improving my development skills and growing as a future software engineer.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="card">
+  <h2><i class="fas fa-code"></i> Skills</h2>
+
+  <div class="skills">
+    <span>Java</span>
+    <span>Python</span>
+    <span>C / C++</span>
+    <span>PL/SQL</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Data Structures</span>
+    <span>Assembly</span>
+    <span>Azure</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="card">
+  <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+
+  <div class="projects-grid"></div>
+
+  <a class="github-btn" href="https://github.com/nf676323-pixel" target="_blank">
+    View All Projects on GitHub →
+  </a>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="card">
   <h2><i class="fas fa-envelope"></i> Contact</h2>
 
@@ -20,3 +119,33 @@
     </a>
   </p>
 </section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Noor Fatima</p>
+</footer>
+
+<!-- GITHUB AUTO PROJECTS -->
+<script>
+fetch("https://api.github.com/users/nf676323-pixel/repos")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector(".projects-grid");
+
+    data.forEach(repo => {
+      const project = document.createElement("div");
+      project.classList.add("project");
+
+      project.innerHTML = `
+        <h3>${repo.name}</h3>
+        <p>${repo.description || "No description available"}</p>
+        <a href="${repo.html_url}" target="_blank">View Code</a>
+      `;
+
+      container.appendChild(project);
+    });
+  });
+</script>
+
+</body>
+</html>
