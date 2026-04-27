@@ -5,7 +5,6 @@
   <title>Noor Fatima | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS LINK -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,25 +23,39 @@
 
 <!-- HERO -->
 <header>
-  <h1 class="fade-in">Noor Fatima</h1>
-  <p class="fade-in delay">
-    Computer Science Undergraduate <br>
-    Fatima Jinnah Women University
+  <h1>Noor Fatima</h1>
+
+  <p>
+    Computer Science Student • Frontend Developer • Problem Solver
   </p>
+
+  <p>
+    📍 Rawalpindi | 4th Semester — Fatima Jinnah Women University
+  </p>
+
+  <div class="skills">
+    <span>Java</span>
+    <span>Python</span>
+    <span>PL/SQL</span>
+    <span>Assembly</span>
+    <span>Azure</span>
+    <span>DSA</span>
+  </div>
 </header>
 
 <!-- ABOUT -->
-<section id="about" class="card slide-up">
+<section id="about" class="card">
   <h2>About Me</h2>
   <p>
-    I am a Computer Science undergraduate (4th Semester) passionate about programming,
-    problem solving, and software development. I enjoy building real-world projects
-    and learning modern technologies.
+    I am a Computer Science undergraduate focused on frontend development with a strong 
+    foundation in programming and problem solving. Skilled in Java, Python, and PL/SQL, 
+    I enjoy building clean, responsive interfaces and turning ideas into practical solutions. 
+    Currently, I am enhancing my skills to grow as a professional software developer.
   </p>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="card slide-up">
+<section id="skills" class="card">
   <h2>Skills</h2>
   <div class="skills">
     <span>Java</span>
@@ -61,11 +74,11 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="card slide-up">
+<section id="projects" class="card">
   <h2>Projects</h2>
 
   <div class="projects-grid">
-    <!-- GitHub projects will auto-load here -->
+    <!-- Auto GitHub Projects -->
   </div>
 
   <a class="github-btn" href="https://github.com/nf676323-pixel" target="_blank">
@@ -74,7 +87,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="card slide-up">
+<section id="contact" class="card">
   <h2>Contact</h2>
 
   <p>Email: nf676323@gmail.com</p>
@@ -94,12 +107,11 @@
   </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 Noor Fatima</p>
 </footer>
 
-<!-- ✅ GITHUB PROJECT SCRIPT -->
+<!-- GITHUB PROJECT SCRIPT -->
 <script>
 fetch("https://api.github.com/users/nf676323-pixel/repos")
   .then(res => res.json())
