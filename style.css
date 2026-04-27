@@ -3,41 +3,48 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #0b0f19;
+  color: white;
 }
 
 /* NAV */
-nav {
+.nav {
   position: fixed;
-  top: 0;
   width: 100%;
-  background: #0f172a;
+  top: 0;
+  background: rgba(10, 15, 30, 0.9);
   display: flex;
   justify-content: space-between;
   padding: 15px 40px;
-  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
-nav h2 {
+.nav h2 {
   color: #38bdf8;
 }
 
-.nav-links a {
-  color: white;
+.nav a {
   margin-left: 20px;
+  color: white;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #38bdf8;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #020617, #0f172a);
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding-left: 10%;
 }
 
 .hero h1 {
@@ -45,12 +52,20 @@ nav h2 {
   color: #38bdf8;
 }
 
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+.hero span {
+  margin-top: 10px;
+  color: #aaa;
+}
+
 /* SECTIONS */
 .section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-  color: white;
+  padding: 100px 10%;
 }
 
 .section h2 {
@@ -59,13 +74,23 @@ nav h2 {
 }
 
 /* SKILLS */
-.skills span {
-  display: inline-block;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.grid div {
+  background: #111827;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.grid div:hover {
   background: #38bdf8;
   color: black;
-  padding: 8px 14px;
-  margin: 6px;
-  border-radius: 20px;
 }
 
 /* PROJECTS */
@@ -76,17 +101,27 @@ nav h2 {
 }
 
 .project {
-  background: #1e293b;
+  background: #111827;
   padding: 20px;
   border-radius: 10px;
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project a {
+  color: #38bdf8;
+  text-decoration: none;
 }
 
 /* CONTACT */
-#contact p {
+.contact-box p {
   margin: 10px 0;
 }
 
-#contact a {
+.contact-box a {
   color: #38bdf8;
   text-decoration: none;
 }
@@ -95,6 +130,6 @@ nav h2 {
 footer {
   text-align: center;
   padding: 20px;
-  background: #0f172a;
-  color: white;
+  background: #0a0f1c;
+  margin-top: 50px;
 }
