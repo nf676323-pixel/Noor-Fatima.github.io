@@ -5,13 +5,16 @@
   <title>Noor Fatima | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
   <h2>Noor Fatima</h2>
   <ul>
@@ -26,9 +29,13 @@
 <header>
   <h1>Noor Fatima</h1>
 
-  <p>Computer Science Student • Frontend Developer • Problem Solver</p>
+  <p>
+    Computer Science Student • Frontend Developer • Problem Solver
+  </p>
 
-  <p>📍 Rawalpindi | Fatima Jinnah Women University</p>
+  <p>
+    📍 Rawalpindi | 4th Semester — Fatima Jinnah Women University
+  </p>
 
   <div class="skills">
     <span>Java</span>
@@ -45,13 +52,20 @@
   <h2><i class="fas fa-user"></i> About Me</h2>
 
   <p>
-    I am a Computer Science student focused on frontend development with strong problem-solving skills.
-    I enjoy building clean, responsive and user-friendly web applications.
+    I am a passionate Computer Science undergraduate specializing in frontend development, 
+    with a strong foundation in programming and problem solving. I enjoy building clean, 
+    responsive, and user-friendly interfaces using modern web technologies.
   </p>
 
   <p>
-    I have experience in Java, Python, PL/SQL, and strong fundamentals in Data Structures and Digital Logic Design.
-    I aim to become a professional software engineer.
+    With hands-on experience in Java, Python, and databases, along with solid concepts 
+    in Data Structures and Digital Logic Design, I focus on writing efficient and 
+    structured code to solve real-world problems.
+  </p>
+
+  <p>
+    I am continuously learning, improving my skills, and working towards becoming 
+    a professional software developer.
   </p>
 </section>
 
@@ -61,13 +75,16 @@
 
   <div class="skills">
     <span>Java</span>
+    <span>C</span>
+    <span>C++</span>
     <span>Python</span>
-    <span>C / C++</span>
     <span>PL/SQL</span>
-    <span>HTML</span>
-    <span>CSS</span>
     <span>Data Structures</span>
     <span>Assembly</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Database</span>
+    <span>Networking</span>
     <span>Azure</span>
   </div>
 </section>
@@ -77,6 +94,10 @@
   <h2><i class="fas fa-laptop-code"></i> Projects</h2>
 
   <div class="projects-grid"></div>
+
+  <a class="github-btn" href="https://github.com/nf676323-pixel" target="_blank">
+    View All Projects →
+  </a>
 </section>
 
 <!-- CONTACT -->
@@ -90,46 +111,38 @@
 
   <p>
     <i class="fab fa-github"></i>
-    <a href="https://github.com/nf676323-pixel" target="_blank">
-      nf676323-pixel
-    </a>
+    <a href="https://github.com/nf676323-pixel" target="_blank">GitHub</a>
   </p>
 
   <p>
     <i class="fab fa-linkedin"></i>
-    <a href="https://www.linkedin.com/in/noor-fatima-613658388/" target="_blank">
-      Noor Fatima
-    </a>
+    <a href="https://www.linkedin.com/in/noor-fatima-613658388/" target="_blank">LinkedIn</a>
   </p>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Noor Fatima</p>
 </footer>
 
-<!-- GITHUB PROJECTS AUTO LOAD -->
+<!-- GITHUB SCRIPT -->
 <script>
 fetch("https://api.github.com/users/nf676323-pixel/repos")
   .then(res => res.json())
-  .then(repos => {
+  .then(data => {
     const container = document.querySelector(".projects-grid");
 
-    repos.forEach(repo => {
+    data.forEach(repo => {
+      const project = document.createElement("div");
+      project.classList.add("project");
 
-      const card = document.createElement("div");
-      card.classList.add("project");
-
-      card.innerHTML = `
+      project.innerHTML = `
         <h3>${repo.name}</h3>
-
-        <p>${repo.description ? repo.description : "No description available"}</p>
-
-        <a href="${repo.html_url}" target="_blank">
-          🔗 View Code on GitHub
-        </a>
+        <p>${repo.description || "No description available"}</p>
+        <a href="${repo.html_url}" target="_blank">View Code</a>
       `;
 
-      container.appendChild(card);
+      container.appendChild(project);
     });
   });
 </script>
