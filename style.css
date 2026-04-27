@@ -40,7 +40,7 @@ h1 {
 
 /* CARDS */
 .card {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.85);
   margin: 30px auto;
   padding: 30px;
   border-radius: 15px;
@@ -90,6 +90,22 @@ h1 {
   background: #38bdf8;
   color: black;
   border-radius: 8px;
+}
+
+/* CONTACT */
+#contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#contact i {
+  color: #38bdf8;
+}
+
+#contact a:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 /* LINKS */
