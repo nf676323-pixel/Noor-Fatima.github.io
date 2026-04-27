@@ -4,31 +4,11 @@
   <meta charset="UTF-8">
   <title>Noor Fatima | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS LINK -->
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- YOUR PROJECT SCRIPT -->
-<script>
-fetch("https://api.github.com/users/nf676323-pixel/repos")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.querySelector(".projects-grid");
 
-    data.forEach(repo => {
-      const project = document.createElement("div");
-      project.classList.add("project");
-
-      project.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description || "No description available"}</p>
-        <a href="${repo.html_url}" target="_blank">View Code</a>
-      `;
-
-      container.appendChild(project);
-    });
-  });
-</script>
-
-</body>
 <body>
 
 <!-- NAVBAR -->
@@ -57,7 +37,7 @@ fetch("https://api.github.com/users/nf676323-pixel/repos")
   <p>
     I am a Computer Science undergraduate (4th Semester) passionate about programming,
     problem solving, and software development. I enjoy building real-world projects
-    and continuously learning modern technologies.
+    and learning modern technologies.
   </p>
 </section>
 
@@ -70,11 +50,11 @@ fetch("https://api.github.com/users/nf676323-pixel/repos")
     <span>C++</span>
     <span>Python</span>
     <span>PL/SQL</span>
-    <span>DSA</span>
+    <span>Data Structures</span>
     <span>Assembly</span>
     <span>HTML</span>
     <span>CSS</span>
-    <span>Databases</span>
+    <span>Database</span>
     <span>Networking</span>
     <span>Azure</span>
   </div>
@@ -85,30 +65,18 @@ fetch("https://api.github.com/users/nf676323-pixel/repos")
   <h2>Projects</h2>
 
   <div class="projects-grid">
-
-    <div class="project">
-      <h3>Project 1</h3>
-      <p>Your project description</p>
-      <a href="https://github.com/nf676323-pixel/PROJECT-LINK" target="_blank">View Code</a>
-    </div>
-
-    <div class="project">
-      <h3>Project 2</h3>
-      <p>Your project description</p>
-      <a href="https://github.com/nf676323-pixel/PROJECT-LINK" target="_blank">View Code</a>
-    </div>
-
+    <!-- GitHub projects will auto-load here -->
   </div>
 
   <a class="github-btn" href="https://github.com/nf676323-pixel" target="_blank">
-    View All Projects on GitHub →
+    View All Projects →
   </a>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="card slide-up">
   <h2>Contact</h2>
+
   <p>Email: nf676323@gmail.com</p>
 
   <p>
@@ -126,9 +94,32 @@ fetch("https://api.github.com/users/nf676323-pixel/repos")
   </p>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Noor Fatima</p>
 </footer>
+
+<!-- ✅ GITHUB PROJECT SCRIPT -->
+<script>
+fetch("https://api.github.com/users/nf676323-pixel/repos")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector(".projects-grid");
+
+    data.forEach(repo => {
+      const project = document.createElement("div");
+      project.classList.add("project");
+
+      project.innerHTML = `
+        <h3>${repo.name}</h3>
+        <p>${repo.description || "No description available"}</p>
+        <a href="${repo.html_url}" target="_blank">View Code</a>
+      `;
+
+      container.appendChild(project);
+    });
+  });
+</script>
 
 </body>
 </html>
