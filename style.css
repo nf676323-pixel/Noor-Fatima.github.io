@@ -1,56 +1,61 @@
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #020617, #0f172a);
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
 }
 
 /* NAV */
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0f172a;
   display: flex;
   justify-content: space-between;
   padding: 15px 40px;
-  background: rgba(0,0,0,0.5);
-  position: sticky;
-  top: 0;
+  z-index: 1000;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+nav h2 {
+  color: #38bdf8;
 }
 
-nav a {
+.nav-links a {
   color: white;
+  margin-left: 20px;
   text-decoration: none;
 }
 
 /* HERO */
-header {
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 90px 20px;
 }
 
-h1 {
-  font-size: 55px;
+.hero h1 {
+  font-size: 60px;
   color: #38bdf8;
-  text-shadow: 0 0 20px #38bdf8;
 }
 
-/* CARD */
-.card {
-  background: rgba(15, 23, 42, 0.85);
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 15px;
+/* SECTIONS */
+.section {
+  padding: 80px 20px;
   max-width: 900px;
-  transition: 0.3s;
+  margin: auto;
+  color: white;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+.section h2 {
+  color: #38bdf8;
+  margin-bottom: 20px;
 }
 
 /* SKILLS */
@@ -61,7 +66,6 @@ h1 {
   padding: 8px 14px;
   margin: 6px;
   border-radius: 20px;
-  font-weight: bold;
 }
 
 /* PROJECTS */
@@ -74,37 +78,15 @@ h1 {
 .project {
   background: #1e293b;
   padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.project:hover {
-  transform: scale(1.05);
-}
-
-/* BUTTON */
-.github-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 18px;
-  background: #38bdf8;
-  color: black;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* CONTACT */
 #contact p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  margin: 10px 0;
 }
 
-#contact i {
-  color: #38bdf8;
-}
-
-/* LINKS */
-a {
+#contact a {
   color: #38bdf8;
   text-decoration: none;
 }
@@ -113,5 +95,6 @@ a {
 footer {
   text-align: center;
   padding: 20px;
-  opacity: 0.7;
+  background: #0f172a;
+  color: white;
 }
