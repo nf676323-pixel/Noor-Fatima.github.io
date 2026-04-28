@@ -40,21 +40,28 @@ async function loadRepos(){
   let allRepos=[];
 
   while(true){
-    const res=await fetch(`https://api.github.com/users/nf676323-pixel/repos?per_page=100&page=${page}&sort=created`);
+    const res=await fetch(`https://api.github.com/users/nf676323-pixel/repos?per_page=100&type=owner&page=${page}&sort=updated`);
     const data=await res.json();
+
     if(!Array.isArray(data) || data.length===0) break;
+
     allRepos=allRepos.concat(data);
     page++;
   }
 
-  allRepos.forEach(repo=>{
+  // remove duplicates (just in case)
+  const uniqueRepos = [...new Map(allRepos.map(r => [r.id, r])).values()];
+
+  uniqueRepos.forEach(repo=>{
     const card=document.createElement('div');
     card.className='card project';
+
     card.innerHTML=`
       <h3>${repo.name}</h3>
       <p>${repo.description || 'GitHub project repository.'}</p>
       <a href='${repo.html_url}' target='_blank'>View Code</a>
     `;
+
     box.appendChild(card);
   });
 }
