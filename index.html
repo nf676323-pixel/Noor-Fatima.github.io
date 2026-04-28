@@ -38,29 +38,32 @@ async function loadRepos(){
   box.innerHTML='';
 
   try{
-    let page=1;
-    let allRepos=[];
+    const url='https://api.github.com/users/nf676323-pixel/repos?per_page=100&sort=updated&type=owner';
+    const res = await fetch(url);
 
-    while(true){
-      const res=await fetch(`https://api.github.com/users/nf676323-pixel/repos?per_page=100&page=${page}&sort=updated&type=owner`);
-      const data=await res.json();
-
-      if(!Array.isArray(data) || data.length===0) break;
-
-      allRepos=allRepos.concat(data);
-      page++;
-
-      if(data.length<100) break;
-    }
-
-    const uniqueRepos = [...new Map(allRepos.map(r => [r.id, r])).values()];
-
-    if(uniqueRepos.length===0){
-      box.innerHTML='<div class="card">No GitHub projects found or API limit reached.</div>';
+    if(!res.ok){
+      box.innerHTML = `<div class='card'>GitHub API error: ${res.status}</div>`;
       return;
     }
 
-    uniqueRepos.forEach(repo=>{
+    const data = await res.json();
+
+    if(!Array.isArray(data)){
+      box.innerHTML = `<div class='card'>Unable to load repositories (API response issue).</div>`;
+      return;
+    }
+
+    if(data.message){
+      box.innerHTML = `<div class='card'>${data.message}</div>`;
+      return;
+    }
+
+    if(data.length === 0){
+      box.innerHTML = `<div class='card'>No GitHub projects found.</div>`;
+      return;
+    }
+
+    data.forEach(repo=>{
       const card=document.createElement('div');
       card.className='card project';
 
@@ -74,7 +77,7 @@ async function loadRepos(){
     });
 
   }catch(err){
-    box.innerHTML='<div class="card">Failed to load GitHub projects. Try again later.</div>';
+    box.innerHTML = `<div class='card'>Failed to load GitHub projects.</div>`;
   }
 }
 
