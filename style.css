@@ -138,3 +138,32 @@ footer {
   padding: 20px;
   opacity: 0.7;
 }
+
+/* EDUCATION SECTION */
+.education-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.edu-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.edu-card h3 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
