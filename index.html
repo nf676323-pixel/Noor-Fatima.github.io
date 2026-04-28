@@ -1,87 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noor Fatima | Portfolio</title>
-<style>
-:root{--purple:#8b5cf6;--light:#f7f2ff;--white:#fff;--dark:#111827;--glass:rgba(255,255,255,.38)}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:linear-gradient(to bottom,#efe7ff,#fff);color:var(--dark)}
-nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 34px;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);z-index:1000}
-nav strong{color:var(--purple);font-size:24px}nav a{text-decoration:none;color:var(--dark);margin-left:16px;font-weight:600}
-section{padding:24px 28px}.wrap{max-width:1100px;margin:auto}.card{background:var(--glass);backdrop-filter:blur(14px);padding:18px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-h2{color:var(--purple);margin-bottom:10px;font-size:32px}.hero{min-height:100vh;display:flex;align-items:center;padding-top:75px;padding-bottom:8px}.hero h1{font-size:64px;color:var(--purple)}.hero p{margin-top:7px}.pill{display:inline-block;background:#efe7ff;color:var(--purple);padding:8px 14px;border-radius:30px;margin:5px;font-weight:700}.btn{display:inline-block;margin-top:8px;padding:12px 18px;background:var(--purple);color:#fff;text-decoration:none;border-radius:10px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.project h3{color:var(--purple);margin-bottom:8px}.project a{display:inline-block;margin-top:8px;color:var(--purple);font-weight:700;text-decoration:none}footer{text-align:center;padding:20px;background:#fff;margin-top:18px}#about{padding-top:8px}#skills,#education,#projects,#contact{padding-top:18px;padding-bottom:18px}@media(max-width:700px){nav{flex-direction:column;gap:10px;padding:14px}.hero h1{font-size:42px}section{padding:18px}}
-#contact a{color:var(--purple);font-weight:600;}
-</style>
+  <meta charset="UTF-8">
+  <title>Noor Fatima | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-<nav><strong>Noor Fatima</strong><div><a href='#about'>About</a><a href='#skills'>Skills</a><a href='#education'>Education</a><a href='#projects'>Projects</a><a href='#contact'>Contact</a></div></nav>
 
-<section class='hero'><div class='wrap'><h1>Noor Fatima</h1><p>Computer Science Student • Frontend Developer • Problem Solver</p><p>Rawalpindi, Pakistan</p><div style='margin-top:12px'><span class='pill'>Java</span><span class='pill'>C</span><span class='pill'>Python</span><span class='pill'>PL/SQL</span><span class='pill'>Assembly</span><span class='pill'>Microsoft Office</span></div><a class='btn' href='#projects'>View Projects</a></div></section>
+<!-- NAVBAR -->
+<nav>
+  <h2>Noor Fatima</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-<section id='about'><div class='wrap'><h2>About Me</h2><div class='card'>I am a Computer Science undergraduate with a strong passion for software development and frontend engineering. I enjoy creating clean, responsive, and user-friendly digital experiences that solve real-world problems.<br><br>I have hands-on experience in Java, Python, PL/SQL, and Assembly, along with a solid understanding of core computer science concepts such as Data Structures, Algorithms, and Digital Logic Design.<br><br>I am highly motivated to continuously improve my technical skills and apply my knowledge in practical projects. My goal is to grow as a professional software engineer and contribute to impactful and scalable software solutions.</div></div></section>
+<!-- HERO -->
+<header>
+  <h1>Noor Fatima</h1>
 
-<section id='skills'><div class='wrap'><h2>Skills</h2><div class='grid'><div class='card'>Java</div><div class='card'>C</div><div class='card'>Python</div><div class='card'>PL/SQL</div><div class='card'>Assembly Language</div><div class='card'>Microsoft Office</div><div class='card'>Data Structures</div><div class='card'>Azure</div></div></div></section>
+  <p>
+    Computer Science Student • Frontend Developer • Problem Solver
+  </p>
 
-<section id='education'><div class='wrap'><h2>Education</h2><div class='grid'><div class='card'><strong>Matriculation with Science</strong><br>2019 - 2021</div><div class='card'><strong>Intermediate (ICS)</strong><br>Math, Physics, Computer<br>2021 - 2023</div><div class='card'><strong>Bachelors in Computer Science</strong><br>2024 - Present</div></div></div></section>
+  <p>
+    📍 Rawalpindi | 4th Semester — Fatima Jinnah Women University
+  </p>
 
-<section id='projects'><div class='wrap'><h2>Projects (GitHub)</h2><div class='grid' id='repos'></div></div></section>
+  <div class="skills">
+    <span>Java</span>
+    <span>Python</span>
+    <span>PL/SQL</span>
+    <span>Assembly</span>
+    <span>Azure</span>
+    <span>DSA</span>
+  </div>
+</header>
 
-<section id='contact'><div class='wrap'><h2>Contact</h2><div class='card'>Email: <a href='mailto:nf676323@gmail.com'>nf676323@gmail.com</a><br><br>GitHub: <a target='_blank' href='https://github.com/nf676323-pixel'>github.com/nf676323-pixel</a><br><br>LinkedIn: <a target='_blank' href='https://www.linkedin.com/in/noor-fatima-613658388/'>noor-fatima-613658388</a></div></div></section>
+<!-- ABOUT (UPDATED ONLY) -->
+<section id="about" class="card">
+  <h2><i class="fas fa-user"></i> About Me</h2>
 
-<footer>© 2026 Noor Fatima</footer>
+  <p>
+    I am a Computer Science undergraduate with a strong passion for software development and frontend engineering. I enjoy creating clean, responsive, and user-friendly digital experiences that solve real-world problems.
+  </p>
 
+  <p>
+    I have hands-on experience in Java, Python, PL/SQL, and Assembly, along with a solid understanding of core computer science concepts such as Data Structures, Algorithms, and Digital Logic Design.
+  </p>
+
+  <p>
+    I am highly motivated to continuously improve my technical skills and apply my knowledge in practical projects. My goal is to grow as a professional software engineer and contribute to impactful and scalable software solutions.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="card">
+  <h2><i class="fas fa-code"></i> Skills</h2>
+
+  <div class="skills">
+    <span>Java</span>
+    <span>C</span>
+    <span>C++</span>
+    <span>Python</span>
+    <span>PL/SQL</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Data Structures</span>
+    <span>Assembly</span>
+    <span>Azure</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="card">
+  <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+
+  <div class="projects-grid"></div>
+
+  <a class="github-btn" href="https://github.com/nf676323-pixel" target="_blank">
+    View All Projects →
+  </a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="card">
+  <h2><i class="fas fa-envelope"></i> Contact</h2>
+
+  <p>
+    <i class="fas fa-envelope"></i>
+    <a href="mailto:nf676323@gmail.com">nf676323@gmail.com</a>
+  </p>
+
+  <p>
+    <i class="fab fa-github"></i>
+    <a href="https://github.com/nf676323-pixel" target="_blank">
+      nf676323-pixel
+    </a>
+  </p>
+
+  <p>
+    <i class="fab fa-linkedin"></i>
+    <a href="https://www.linkedin.com/in/noor-fatima-613658388/" target="_blank">
+      noor-fatima-613658388
+    </a>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Noor Fatima</p>
+</footer>
+
+<!-- GITHUB PROJECTS AUTO LOAD -->
 <script>
-async function loadRepos(){
-  const box=document.getElementById('repos');
-  box.innerHTML='';
+fetch("https://api.github.com/users/nf676323-pixel/repos")
+  .then(res => res.json())
+  .then(repos => {
+    const container = document.querySelector(".projects-grid");
 
-  try{
-    const url='https://api.github.com/users/nf676323-pixel/repos?per_page=100&sort=updated&type=owner';
-    const res = await fetch(url);
+    repos.forEach(repo => {
+      const card = document.createElement("div");
+      card.classList.add("project");
 
-    if(!res.ok){
-      box.innerHTML = `<div class='card'>GitHub API error: ${res.status}</div>`;
-      return;
-    }
-
-    const data = await res.json();
-
-    if(!Array.isArray(data)){
-      box.innerHTML = `<div class='card'>Unable to load repositories (API response issue).</div>`;
-      return;
-    }
-
-    if(data.message){
-      box.innerHTML = `<div class='card'>${data.message}</div>`;
-      return;
-    }
-
-    if(data.length === 0){
-      box.innerHTML = `<div class='card'>No GitHub projects found.</div>`;
-      return;
-    }
-
-    data.forEach(repo=>{
-      const card=document.createElement('div');
-      card.className='card project';
-
-      card.innerHTML=`
+      card.innerHTML = `
         <h3>${repo.name}</h3>
-        <p>${repo.description || 'GitHub project repository.'}</p>
-        <a href='${repo.html_url}' target='_blank'>View Code</a>
+        <p>${repo.description ? repo.description : "No description available"}</p>
+        <a href="${repo.html_url}" target="_blank">View Code</a>
       `;
 
-      box.appendChild(card);
+      container.appendChild(card);
     });
-
-  }catch(err){
-    box.innerHTML = `<div class='card'>Failed to load GitHub projects.</div>`;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', loadRepos);
+  });
 </script>
 
 </body>
